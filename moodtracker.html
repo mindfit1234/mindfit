@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mood Tracker</title>
+  <link rel="icon" type="image/x-icon" href="../emoji.png">
+  <link href="https://fonts.cdnfonts.com/css/agelliya-script" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/daily-bubble" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/vtckomixationscitalic" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/agbalumo" rel="stylesheet">
+</head>
+
+<body>
+
+  <button class="homebtn1"><a href="mindfit.html"><img src="homebtn.png"></a></button>
+  <h1 id="title">Mood Tracker</h1>
+  <h2 id="subtitle">Track your mood and feelings</h2>
+  <div class="wrapper"">
+        <p id="message"></p>
+    <ul id="tips">
+      <li>Tips:</li>
+      <li>1. Try to get some rest</li>
+      <li>2. Do some light exercises</li>
+      <li>3. Talk to a trusted person <li>
+      <li>4. Take a walk</li>
+      <li>5. Try to do some deep breathing exercises</li>
+      <li>6. Listen to music </li>
+      <li>7. Read A Book</li>
+      <li>8. Avoid self-criticism. Everyone has bad days.</li>
+      <li>9. 
+        Take a break from social media, news, or anything that might be adding to your stress.
+
+</li>
+      <li>10. Try to do some mindfulness meditation</li>
+      <li><b><i>Remember that everyone goes through bad days. Everyone is Important</i></b></li>
+    </ul>
+    <p id="tips1"></p>
+    <form class=" form" id="e">
+      <div class="question">
+        <h3>How was work/school/day</h3>
+      </div>
+      <div class="options1">
+        <div class="option">
+          <input type="radio" name="g1" value="great" class="great 1" id="1e">
+          <label for="1e">Great (5 Stars)</label>
+        </div>
+        <div class="option2">
+          <input type="radio" name="g2" value="good" class="good 1" id="2e">
+          <label for="2e">Good (4 Stars)</label>
+        </div>
+        <div class="option3">
+          <input type="radio" name="okay" value="okay" class="okay 1" id="3e">
+          <label for="3e">Okay (3 Star)</label>
+        </div>
+        <div class="option4">
+          <input type="radio" name="bad" value="bad" class="bad 1" id="4e">
+          <label for="4e">Bad (2 Star)</label>
+        </div>
+        <div class="option5">
+          <input type="radio" name="worst" value="worst" class="worst 1" id="5e">
+          <label for="5e">Worst (1 Star)</label>
+        </div>
+      </div>
+    </form>
+    <form class=" form" id="a">
+      <div class="question">
+        <h3>How was your anxiety level</h3>
+      </div>
+      <div class="options1">
+        <div class="option">
+          <input type="radio" name="g1" value="great" class="great" id="1a">
+          <label for="1a">None</label>
+        </div>
+        <div class="option2">
+          <input type="radio" name="g2" value="good" class="good" id="2a">
+          <label for="2a">Low</label>
+        </div>
+        <div class="option3">
+          <input type="radio" name="okay" value="okay" class="okay" id="3a">
+          <label for="3a">Medium</label>
+        </div>
+        <div class="option4">
+          <input type="radio" name="bad" value="bad" class="bad" id="4a">
+          <label for="4a">High</label>
+        </div>
+        <div class="option5">
+          <input type="radio" name="worst" value="worst" class="worst" id="5a">
+          <label for="5a">Severe</label>
+        </div>
+      </div>
+    </form>
+    <form class=" form" id="b">
+      <div class="question">
+        <h3>How was your energy levels</h3>
+      </div>
+      <div class="options1">
+        <div class="option">
+          <input type="radio" name="g1" value="great" class="great" id="1b">
+          <label for="1b"> Really High</label>
+        </div>
+        <div class="option2">
+          <input type="radio" name="g2" value="good" class="good" id="2b">
+          <label for="2b">High</label>
+        </div>
+        <div class="option3">
+          <input type="radio" name="okay" value="okay" class="okay" id="3b">
+          <label for="3b">Medium</label>
+        </div>
+        <div class="option4">
+          <input type="radio" name="bad" value="bad" class="bad" id="4b">
+          <label for="4b">Low</label>
+        </div>
+        <div class="option5">
+          <input type="radio" name="worst" value="worst" class="worst" id="5b">
+          <label for="5b">None</label>
+        </div>
+      </div>
+    </form>
+    <form class=" form" id="c">
+      <div class="question">
+        <h3>How was your Focus/Concentration </h3>
+      </div>
+      <div class="options1">
+        <div class="option">
+          <input type="radio" name="g1" value="great" class="great" id="1c">
+          <label for="1c"> Really High</label>
+        </div>
+        <div class="option2">
+          <input type="radio" name="g2" value="good" class="good" id="2c">
+          <label for="2c">High</label>
+        </div>
+        <div class="option3">
+          <input type="radio" name="okay" value="okay" class="okay" id="3c">
+          <label for="3c">Medium</label>
+        </div>
+        <div class="option4">
+          <input type="radio" name="bad" value="bad" class="bad" id="4c">
+          <label for="4c">Low</label>
+        </div>
+        <div class="option5">
+          <input type="radio" name="worst" value="worst" class="worst" id="5c">
+          <label for="5c">None</label>
+        </div>
+      </div>
+    </form>
+    <form class=" form" id="d">
+      <div class="question">
+        <h3>How was your productivity</h3>
+      </div>
+      <div class="options1">
+        <div class="option">
+          <input type="radio" name="g1" value="great" class="great" id="1d">
+          <label for="1d"> Really High</label>
+        </div>
+        <div class="option2">
+          <input type="radio" name="g2" value="good" class="good" id="2d">
+          <label for="2d">High</label>
+        </div>
+        <div class="option3">
+          <input type="radio" name="okay" value="okay" class="okay" id="3d">
+          <label for="3d">Medium</label>
+        </div>
+        <div class="option4">
+          <input type="radio" name="bad" value="bad" class="bad" id="4d">
+          <label for="4d">Low</label>
+        </div>
+        <div class="option5">
+          <input type="radio" name="worst" value="worst" class="worst" id="5d">
+          <label for="5d">None</label>
+        </div>
+      </div>
+    </form>
+    <div id="sub">
+      <button type="submit" id="submit1">Check My Mood</button>
+    </div>
+  </div>
+  <div id="list"></div>
+</body>
+<style>
+  html {
+    font-family: "daily bubble";
+    color: #2e2b41;
+    text-align: center;
+  }
+
+  body {
+    background-image: url(bg8.jpg);
+
+  }
+
+  .wrapper {
+    width: 413px;
+    height: 685px;
+    background-color: white;
+    border-radius: 1cqh;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px gray;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  #list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    gap: 4px;
+    background-color: white;
+    box-shadow: 10px 10px 10px 10px gray ;
+    max-width: 413px;
+    margin: auto;
+  }
+  .homebtn1 {
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+    border: none;
+    float: left;
+    top: 20px;
+  }
+
+  .options1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .option {
+    margin-right: 10px;
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    color: #555;
+    width: 77px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    color: #0f0f0f;
+    /*border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 2px 2px gray;*/
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  .homebtn1 img {
+    width: 45px;
+    height: 45px
+  }
+
+
+  input[type="radio"] {
+    display: none;
+    text-align: center;
+    align-items: center;
+
+  }
+
+  .option:hover {
+    background-color: #9b9bd1;
+  }
+
+  .option2:hover {
+    background-color: #9b9bd1;
+  }
+
+  .option3:hover {
+    background-color: #9b9bd1;
+  }
+
+  .option4:hover {
+    background-color: #9b9bd1;
+
+  }
+
+  .option5:hover {
+    background-color: #9b9bd1;
+  }
+
+  .option {
+    background-color: #6ec45e;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+
+  }
+
+  .option2 {
+    background-color: #b0d9a9;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+  }
+
+  .option3 {
+    background-color: #fcfc88;
+    margin-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+  }
+
+  .option4 {
+    background-color: #f55c20;
+    margin-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+  }
+
+  .option5 {
+    background-color: #fa0f0f;
+    margin-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px gray;
+  }
+
+  #submit1 {
+    margin-top: 20px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: #123524;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+    box-shadow: 3px 3px 3px 3px gray;
+  }
+
+  #submit1:hover {
+    background-color: #10082b;
+  }
+
+  #submit1:focus {
+    outline: none;
+    background-color: #10082b;
+  }
+
+  #tips {
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #00031B;
+    font: inherit;
+    font-size: 20px;
+    box-shadow: 3px 3px 3px 3px gray;
+    align-items: center;
+    margin: auto;
+  }
+  #tips li{
+    list-style: none;
+    font-size: 20px;
+  }
+  #message {
+    font-size: 25px;
+    font-family: "daily bubble";
+    font-weight: 200px;
+    color: #123524;
+  }
+  #tips1{
+    font-size: 15px;
+    font-family: "daily bubble";
+    font-weight: 200px;
+    color: #123524
+  }
+</style>
+<script src="moodtracker.js"></script>
+
+</html>

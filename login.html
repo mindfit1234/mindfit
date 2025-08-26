@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="../emoji.png">
+  <link href="https://fonts.cdnfonts.com/css/agelliya-script" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/daily-bubble" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/vtckomixationscitalic" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/agbalumo" rel="stylesheet" </head>
+
+<body>
+  <div class="wrapper">
+    <h1 class="txt">Login</h1>
+    <p id="errormsg1"></p>
+    <button id="homebtn"><a href="mindfit.html">Click For Homepage</a></button>
+    <form id="form">
+      <div>
+        <label for="usernameinput"" ><svg xmlns=" http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+          width="24px" fill="#ffffff">
+          <path
+            d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
+          </svg>
+        </label>
+        <input type="text" name="username" id="usernameinput" placeholder="user name">
+      </div>
+      <div>
+        <label for="passwordinput"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#ffffff">
+            <path
+              d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z" />
+          </svg></label>
+        <input type="password" name="pasword" id="passwordinput" placeholder="Pasword">
+      </div>
+      <div>
+        <button type="submit" id="submit">Login</button>
+      </div>
+    </form>
+    <p>Don't Have An Account? <a href="signup.html">Create One</a></p>
+  </div>
+</body>
+<style>
+  :root {
+    --accent-color: #8672ff;
+    --base-color: white;
+    --text-color: #2e2b41;
+    --input-color: #f3f0ff
+  }
+
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  html {
+    font-family: "daily bubble";
+    color: #2e2b41;
+    text-align: center;
+  }
+
+  body {
+    background-image: url(bg4.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .wrapper {
+    width: 300px;
+    height: 455px;
+    background-color: white;
+    border-radius: 1cqh;
+    margin: 100px auto;
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px gray;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  form {
+    width: min(400px, 100%);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  form>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  form label {
+    flex-shrink: 0;
+    height: 45px;
+    width: 45px;
+    background-color: #123524;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 45px;
+    padding: lem;
+    border-radius: 0px 10px 10px 0px;
+    border-left: none;
+    border: 2px solid var(--input-color);
+    background-color: var(--input-color);
+    transition: 150ms ease;
+  }
+
+  form input:hover {
+    border-color: #123524;
+  }
+
+  form input:focus {
+    outline: none;
+    border-color: var(--text-color);
+  }
+
+  div:has(input:focus)>label {
+    background-color: var(--text-color);
+  }
+
+  form input::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+  }
+
+  form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: #123524;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+    box-shadow: 3px 3px 3px 3px gray;
+  }
+
+  form button:hover {
+    background-color: var(--text-color);
+  }
+
+  form button:focus {
+    outline: none;
+    background-color: var(--text-color);
+  }
+
+  a {
+    text-decoration: none;
+    color: #123524;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1100px) {
+    .wrapper {
+      width: min(600px, 100%);
+      border-radius: 0;
+    }
+  }
+
+  .errormsg1 {
+    color: red;
+    font-size: 10px;
+    font-family: "daily bubble"
+  }
+
+  #homebtn {
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    height: 10%;
+    background-color: #00031B;
+    color: white;
+    font: inherit;
+    font-size: 12px;
+    box-shadow: 3px 3px 3px 3px gray;
+    opacity: 0;
+  }
+  #homebtn a{
+    text-decoration: none;
+    color: white;
+    font-family: "daily bubble";
+    font-size: 12px;
+  }
+  .h1{
+    margin: 1px;
+  }
+</style>
+<script src="login.js"></script>
+
+</html>

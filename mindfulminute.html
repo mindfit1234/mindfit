@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mindful Minute</title>
+    <link rel="icon" type="image/x-icon" href="../emoji.png">
+    <link href="https://fonts.cdnfonts.com/css/agelliya-script" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/daily-bubble" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/vtckomixationscitalic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agbalumo" rel="stylesheet">
+    <style>
+        html {
+            font-family: "daily bubble";
+            color: #2e2b41;
+            text-align: center;
+        }
+
+        body {
+            background-image: url(bg19.jpg);
+        }
+
+        .wrapper {
+            width: 413px;
+            height: auto;
+            min-height: 443px;
+            background-color: white;
+            border-radius: 1cqh;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 10px 10px 10px 10px gray;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .homebtn1 {
+            background-color: transparent;
+            width: 45px;
+            height: 45px;
+            border: none;
+            float: left;
+            top: 20px;
+        }
+
+        .homebtn1 img {
+            width: 45px;
+            height: 45px;
+        }
+
+        #start {
+            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            background-color: #00031b;
+            color: white;
+            font-family: "daily bubble";
+            font-weight: 600;
+        }
+
+        .next {
+            margin-top: 20px;
+            border: none;
+            border-radius: 7px;
+            padding: 5px;
+            width: 55px;
+            height: 50px;
+            font-size: 14px;
+            background-color: #123524;
+            color: white;
+            font-family: "daily bubble";
+            font-weight: 600;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .test {
+            font-size: 20px;
+            font-family: "daily bubble";
+        }
+    </style>
+</head>
+
+<body>
+    <button class="homebtn1"><a href="mindfit.html"><img src="homebtn.png" alt="Home"></a></button>
+    <h1 id="title">Mindful Minute</h1>
+    <h2 id="subtitle">Take a minute to take a deep <br> breath and be aware of your<br> surroundings </h2>
+    <div class="wrapper">
+        <button id="start">Click To Start</button>
+        <div class="test hidden">
+            <p id="timer" class="test"></p>
+            <p id="message" class="test"></p>
+            <button id="next" class="test next">Next</button>
+        </div>
+    </div>
+    <script>
+        const message = document.getElementById("message");
+        const timerDisplay = document.getElementById("timer");
+        const start = document.getElementById("start");
+        const testContainer = document.querySelector(".test");
+        const messages = ["Notice 3 Things That Are Blue", "Notice 2 sounds", "Touch Your Left Ear", "Touch Your Right Ear", "Notice 3 Things That Are Red", "Feel a Texture and identify it"]
+        let msgindex = 0;
+        let timeLeft = 60;
+        let timerInterval;
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            const formattedMinutes = String(minutes).padStart(2, "0");
+            const formattedSeconds = String(seconds).padStart(2, "0");
+            return `${formattedMinutes}:${formattedSeconds}`;
+        }
+
+        function startTimer() {
+            // Hide the start button and show the timer container
+            start.style.display = "none";
+            testContainer.classList.remove("hidden");
+
+            // Clear any existing interval
+            clearInterval(timerInterval);
+
+            // Set the timer display to the initial time
+            timerDisplay.textContent = formatTime(timeLeft);
+            message.textContent = "Take a deep breath.";
+
+            // Start the countdown
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    timerDisplay.textContent = formatTime(timeLeft);
+                } else {
+                    clearInterval(timerInterval);
+                    timerDisplay.textContent = "Time's up!";
+                    message.textContent = "Great job, you've completed your mindful minute!";
+                }
+            }, 1000);
+        }
+        function msg() {
+            message.textContent = messages[msgindex];
+            msgindex++;
+            if (msgindex >= messages.length && timeLeft > 0) {
+                clearInterval(timerInterval);
+                timerDisplay.textContent = "Congratulations!, you have completed you mindful minute";
+                message.textContent = "";
+                next.style.backgroundColor = "transparent";
+            }
+        }
+
+        start.addEventListener("click", startTimer);
+        next.addEventListener("click", msg);
+    </script>
+</body>
+
+</html>

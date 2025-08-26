@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tracker</title>
+    <link rel="icon" type="image/x-icon" href="../emoji.png">
+    <link href="https://fonts.cdnfonts.com/css/agelliya-script" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/daily-bubble" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/vtckomixationscitalic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agbalumo" rel="stylesheet">
+</head>
+
+<body>
+    <button class="homebtn1"><a href="mindfit.html"><img src="homebtn.png" alt="Home"></a></button>
+    <h1 id="title"> Book Tracker</h1>
+    <h2 id="subtitle">Reading is an AWSOME hobby. Keep track of <br>each book you have read <br> in our Reading Tracker</h2>
+    <div class="wrapper">
+        <div id="content">
+            <input type="text" id="input" placeholder="Book Name">
+            <select id="rating-input">
+                <option value="1">1/5</option>
+                <option value="2">2/5</option>
+                <option value="3">3/5</option>
+                <option value="4">4/5</option>
+                <option value="5">5/5</option>
+            </select>
+            <button id="add" class="addbtn">+</button>
+            <div id="list">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        html {
+            font-family: "daily bubble";
+            color: #2e2b41;
+            text-align: center;
+        }
+
+        body {
+            background-image: url(bg13.jpg);
+        }
+
+        .wrapper {
+            width: 413px;
+            height: auto;
+            min-height: 685px;
+            background-color: white;
+            border-radius: 1cqh;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 10px 10px 10px 10px gray;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .homebtn1 {
+            background-color: transparent;
+            width: 45px;
+            height: 45px;
+            border: none;
+            float: left;
+            top: 20px;
+        }
+
+        .homebtn1 img {
+            width: 45px;
+            height: 45px;
+        }
+
+        #list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 4px;
+        }
+
+        #add {
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background-color: #123524;
+            font-family: "daily bubble";
+            font-size: 20px;
+            color: white;
+        }
+
+        #input {
+            height: 45px;
+            width: 235px;
+            border-radius: 10px;
+            margin-top: 0px;
+        }
+
+        #rating-input {
+            height: 45px;
+            border-radius: 10px;
+            font-family: "daily bubble";
+            margin-left: 5px;
+        }
+
+        .pa {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gratitude-text {
+            flex-grow: 1;
+        }
+
+        .rating-display {
+            font-weight: bold;
+            color: #123524;
+        }
+    </style>
+
+    <script>
+        const input = document.getElementById("input");
+        const ratingInput = document.getElementById("rating-input");
+        const add = document.getElementById("add");
+        const gratitudeList = document.getElementById("list");
+
+        function saveEntries() {
+            const entries = Array.from(gratitudeList.querySelectorAll(".pa")).map(p => {
+                return {
+                    text: p.querySelector('.gratitude-text').textContent,
+                    rating: p.querySelector('.rating-display').textContent
+                };
+            });
+            localStorage.setItem("entries", JSON.stringify(entries));
+        }
+
+        function createEntry(text, rating) {
+            const p = document.createElement("p");
+            p.classList.add("pa");
+
+            const textSpan = document.createElement("span");
+            textSpan.classList.add("gratitude-text");
+            textSpan.textContent = text;
+
+            const ratingSpan = document.createElement("span");
+            ratingSpan.classList.add("rating-display");
+            ratingSpan.textContent = rating;
+
+            p.appendChild(textSpan);
+            p.appendChild(ratingSpan);
+
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                p.style.opacity = "1";
+                p.style.transform = "translateY(0)";
+            }, 10);
+
+            return p;
+        }
+
+        function addEntry() {
+            const text = input.value.trim();
+            const rating = ratingInput.value + "/5";
+
+            if (text !== "") {
+                const newEntry = createEntry(text, rating);
+                gratitudeList.prepend(newEntry);
+                input.value = "";
+                saveEntries();
+            }
+        }
+
+        function loadEntries() {
+            const storedEntries = localStorage.getItem("entries");
+            if (storedEntries) {
+                const entries = JSON.parse(storedEntries);
+                entries.forEach(entry => {
+                    const entryElement = createEntry(entry.text, entry.rating);
+                    gratitudeList.appendChild(entryElement);
+                });
+            }
+        }
+
+        add.addEventListener("click", addEntry);
+
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                addEntry();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", loadEntries);
+    </script>
+</body>
+</html>

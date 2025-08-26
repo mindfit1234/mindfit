@@ -1,1 +1,1 @@
-# mindfit1
+# mindfit
